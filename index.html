@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Talon.lol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(135deg, #000000 60%, #FF6F00 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      color: #FF6F00;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: bounceIn 1s ease;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #FF6F00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      color: #ffffff;
+    }
+
+    .features-title {
+      font-size: 2rem;
+      text-align: center;
+      color: #ffffff;
+      border-bottom: 2px solid #FF6F00;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 2rem;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .feature-box {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease;
+      box-shadow: 0 0 10px #000;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.08);
+      background-color: #FF6F00;
+      color: #000;
+      box-shadow: 0 0 20px #FF6F00;
+    }
+
+    .get-it {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .get-it a {
+      position: relative;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #FF6F00;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #FF6F00;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .get-it a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #FF6F00;
+    }
+
+    .get-it a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: skewX(-25deg);
+    }
+
+    .get-it a:hover::before {
+      left: 100%;
+      transition: left 0.7s ease;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid #FF6F00;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .dot {
+      position: fixed;
+      top: -10px;
+      background-color: #FF6F00;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Talon.lol</h1>
+
+  <section class="about">
+    <h2>Information</h2>
+    <p>
+      Talon.lol is your high-performance script for perfect precision aimbot completely undetected, With 100% accuracy and cutting-edge features, it transforms your gameplay with smooth control, customizable visuals, and an interactive experience tailored for the best normal, competitive and closet-cheating experience.
+    </p>
+  </section>
+
+  <section>
+    <div class="features-title">Features</div>
+    <div class="features">
+      <div class="feature-box">🎯 100% Accuracy Engine</div>
+      <div class="feature-box">⚡ Fast and Reliable Updates</div>
+      <div class="feature-box">🎨 Customizable Visuals Menu</div>
+      <div class="feature-box">🕹️ Interactive GUI</div>
+    </div>
+  </section>
+
+  <section class="get-it">
+    <h2>Get It Now</h2>
+    <p>
+      Talon.lol is completely free to use. No subscriptions, no hidden fees — just copy, paste inside of executor and start conquering lobbies.
+    </p>
+    <a href="https://discord.gg/7vQ4ecS7" target="_blank">Join the Discord</a>
+  </section>
+
+  <footer>
+    talon.lol 2025 | All Rights Reserved
+  </footer>
+
+  <script>
+    function createDot() {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = `${Math.random() * window.innerWidth}px`;
+      dot.style.animationDuration = `${2 + Math.random() * 3}s`;
+      document.body.appendChild(dot);
+      setTimeout(() => { dot.remove(); }, 5000);
+    }
+
+    setInterval(createDot, 200);
+  </script>
+</body>
+</html>
